@@ -73,7 +73,7 @@ public class viewEmployeeServlet extends HttpServlet {
 "  <a class=\"nav-link\" href=\"viewEmployeeServlet\" style=\"border-right: gray;border-style: inset\">View Employees</a>\n" +
                     "            <a class=\"nav-link\" href=\"adminMain.jsp\" style=\"border-right: gray;border-style: inset\">Staff Details</a>\n" +
 "  <a class=\"nav-link\" href=\"MoreDetails.jsp\" style=\"border-right: gray;border-style: inset\">More Details</a>\n" +
-"  <a class=\"nav-link\" href=\"index.jsp\"><button style=\"color:white;background-color: red;font-weight: bold\">__Log Out__</button></a>\n" +
+"  <a class=\"nav-link\" href=\"lodin.jsp\"><button style=\"color:white;background-color: red;font-weight: bold\">__Log Out__</button></a>\n" +
 " \n" +
 "</nav>\n" +
 "        <hr>");
@@ -85,9 +85,6 @@ public class viewEmployeeServlet extends HttpServlet {
             out.println("<h1 style='text-align:center;margin:20px;letter-spacing:0.3em'>Employee Details</h1>");
             out.println("<hr>");
             
-            out.println("<a href='home.jsp'>"
-                    + "<button style='margin:20px;padding:15px;border-radius:15px;font-weight:bold;color:white;background-color:green' >__Goto Add Employee__ </button>"
-                    + "</a>");
             
             
             out.println("<Center>");

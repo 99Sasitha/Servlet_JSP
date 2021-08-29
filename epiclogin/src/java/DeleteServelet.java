@@ -48,13 +48,15 @@ public class DeleteServelet extends HttpServlet {
         PrintWriter out=response.getWriter();
         
      
-        
+         
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con=DriverManager.getConnection("jdbc:mysql://localhost:3308/epiclogindb","root","");
             
+             
           String id=request.getParameter("id");
           
+      
           
           pst=con.prepareStatement("delete from employees where empid= ?");
           

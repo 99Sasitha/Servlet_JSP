@@ -24,7 +24,7 @@
             <a class="nav-link" href="viewEmployeeServlet" style="border-right: gray;border-style: inset">View Employees</a>
             <a class="nav-link" href="adminMain.jsp" style="border-right: gray;border-style: inset">Staff Details</a>
   <a class="nav-link" href="MoreDetails.jsp" style="border-right: gray;border-style: inset">More Details</a>
-  <a class="nav-link" href="index.jsp"><button style="color:white;background-color: red;font-weight: bold">__Log Out__</button></a>
+  <a class="nav-link" href="lodin.jsp"><button style="color:white;background-color: red;font-weight: bold">__Log Out__</button></a>
  
 </nav>
         

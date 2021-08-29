@@ -18,9 +18,10 @@
     </head>
    <body style="background-size: cover;background-repeat: no-repeat;background-image:url('https://news.fnal.gov/wp-content/uploads/2020/02/2020-02-11_5e42c8469d971_White_background-scaled.jpg') ">
         <nav class="nav nav-pills nav-fill" style="margin-top: 15px;color:white;padding:10px;background-color: beige">
-            <a class="nav-link" href="adminMain.jsp" style="border-right: gray;border-style: inset">Home</a>
+           
             <a class="nav-link " aria-current="page" href="homeadmin.jsp" style="border-right: gray;border-style: inset" >Add Employee</a>
   <a class="nav-link" href="viewEmployeeServlet" style="border-right: gray;border-style: inset">View Employees</a>
+   <a class="nav-link" href="adminMain.jsp" style="border-right: gray;border-style: inset">Staff Details</a>
   <a class="nav-link" href="MoreDetails.jsp" style="border-right: gray;border-style: inset">More Details</a>
   <a class="nav-link" href="index.jsp"><button style="color:white;background-color: red;font-weight: bold">__Log Out__</button></a>
  
