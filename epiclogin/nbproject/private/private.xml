@@ -3,15 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Epic%20Technology/servelet/epiclogin/src/java/loginServlet.java</file>
-            <file>file:/D:/Epic%20Technology/servelet/epiclogin/web/homeadmin.jsp</file>
-            <file>file:/D:/Epic%20Technology/servelet/epiclogin/src/java/viewEmployeeServlet.java</file>
-            <file>file:/D:/Epic%20Technology/servelet/epiclogin/web/home.jsp</file>
-            <file>file:/D:/Epic%20Technology/servelet/epiclogin/src/java/adminEmployeeServlet.java</file>
-            <file>file:/D:/Epic%20Technology/servelet/epiclogin/src/java/employeServlet.java</file>
-            <file>file:/D:/Epic%20Technology/servelet/epiclogin/src/java/DeleteServelet.java</file>
-            <file>file:/D:/Epic%20Technology/servelet/epiclogin/web/deleteConfirm.jsp</file>
-            <file>file:/D:/Epic%20Technology/servelet/epiclogin/web/lodin.jsp</file>
+            <file>file:/D:/Epic%20Technology/servelet/Servlet_JSP/epiclogin/web/homeadmin.jsp</file>
+            <file>file:/D:/Epic%20Technology/servelet/Servlet_JSP/epiclogin/src/java/viewEmployeeServlet.java</file>
+            <file>file:/D:/Epic%20Technology/servelet/Servlet_JSP/epiclogin/web/MoreDetails.jsp</file>
+            <file>file:/D:/Epic%20Technology/servelet/Servlet_JSP/epiclogin/web/index.jsp</file>
+            <file>file:/D:/Epic%20Technology/servelet/Servlet_JSP/epiclogin/web/registration.jsp</file>
+            <file>file:/D:/Epic%20Technology/servelet/Servlet_JSP/epiclogin/web/home.jsp</file>
+            <file>file:/D:/Epic%20Technology/servelet/Servlet_JSP/epiclogin/web/lodin.jsp</file>
+            <file>file:/D:/Epic%20Technology/servelet/Servlet_JSP/epiclogin/web/adminMain.jsp</file>
         </group>
     </open-files>
 </project-private>

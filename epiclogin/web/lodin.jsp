@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" href="https://media-exp1.licdn.com/dms/image/C560BAQH00MCBWLYYyA/company-logo_200_200/0?e=2159024400&v=beta&t=AubBS-Kij0iEK5qgPl0pnH3N-ZzLVcz1TZX6TpzTZrs"  />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
@@ -25,7 +26,7 @@
     
     
     <body style="background-size: cover;background-repeat: no-repeat;background-image:url('https://news.fnal.gov/wp-content/uploads/2020/02/2020-02-11_5e42c8469d971_White_background-scaled.jpg') ">
-        <h1 style="text-align: center;margin: 20px;font-weight: bold;letter-spacing: 0.2em">User Login</h1>
+        <h1 style="text-align: center;margin: 20px;font-weight: bold;letter-spacing: 0.2em">Login Page</h1>
         
         <hr>
         
@@ -58,7 +59,7 @@
                     </td>
                 </tr>
                 
-                <div class="form-group">
+<!--                <div class="form-group">
                 <tr>
                     <th>
                         <label >Select User Role :</abel ></th>
@@ -71,7 +72,7 @@
                             </select>
                     </td>
                 </tr>
-                            </div>
+                            </div>-->
                 
                 <tr>
                     <td colspan="2">

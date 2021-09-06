@@ -51,17 +51,17 @@ public class registerServlet extends HttpServlet {
             //get data from student table
             String username=request.getParameter("userName");
             String password=request.getParameter("password");
-            String userRole=request.getParameter("dropdown");
+//            String userRole=request.getParameter("dropdown");
             
            
             
           
             
-            pst=con.prepareStatement("insert into students values(null,?,md5(?),?)");
+            pst=con.prepareStatement("insert into students values(null,?,md5(?),'user')");
              
             pst.setString(1,username);
             pst.setString(2, password);
-            pst.setString(3,userRole);
+//            pst.setString(3,userRole);
             
             row=pst.executeUpdate();
             

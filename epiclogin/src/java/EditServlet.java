@@ -52,7 +52,7 @@ public class EditServlet extends HttpServlet {
              rs=pst.executeQuery();
              
              while(rs.next()){
-                 
+                 out.println("<head><link rel=\"icon\" href=\"https://media-exp1.licdn.com/dms/image/C560BAQH00MCBWLYYyA/company-logo_200_200/0?e=2159024400&v=beta&t=AubBS-Kij0iEK5qgPl0pnH3N-ZzLVcz1TZX6TpzTZrs\"  /></head>");
                  out.println("<title>E p i c__T e c h n o l o g y</title>");
                    out.println("<h1 style='text-align:center;margin:20px;letter-spacing:0.3em'>Edit Employee Details</h1>");
              out.println("<hr>");

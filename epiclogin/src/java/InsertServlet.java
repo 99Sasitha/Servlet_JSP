@@ -18,7 +18,7 @@ public class InsertServlet extends HttpServlet {
     
     Connection conn=null;
     PreparedStatement st= null;
-    String dburl="jdbc:mysql://localhost:3307/epiclogindb";
+    String dburl="jdbc:mysql://localhost:3308/epiclogindb";
     
 
     

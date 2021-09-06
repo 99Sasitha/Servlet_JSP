@@ -66,6 +66,10 @@ public class viewEmployeeServlet extends HttpServlet {
             
             out.println("<body style=\"background-size: cover;background-repeat: no-repeat;background-image:url('https://news.fnal.gov/wp-content/uploads/2020/02/2020-02-11_5e42c8469d971_White_background-scaled.jpg') \">");
             
+            response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Expires","0");
+            
             out.println("<header>");
             out.println("<nav class=\"nav nav-pills nav-fill\" style=\"margin-top: 15px;color:white;padding:10px;background-color: beige\">\n" +
 
@@ -73,7 +77,7 @@ public class viewEmployeeServlet extends HttpServlet {
 "  <a class=\"nav-link\" href=\"viewEmployeeServlet\" style=\"border-right: gray;border-style: inset\">View Employees</a>\n" +
                     "            <a class=\"nav-link\" href=\"adminMain.jsp\" style=\"border-right: gray;border-style: inset\">Staff Details</a>\n" +
 "  <a class=\"nav-link\" href=\"MoreDetails.jsp\" style=\"border-right: gray;border-style: inset\">More Details</a>\n" +
-"  <a class=\"nav-link\" href=\"lodin.jsp\"><button style=\"color:white;background-color: red;font-weight: bold\">__Log Out__</button></a>\n" +
+"  <form action='logoutServlet'><button style=\"color:white;background-color: red;font-weight: bold\">__Log Out__</button></form>\n" +
 " \n" +
 "</nav>\n" +
 "        <hr>");
@@ -85,7 +89,7 @@ public class viewEmployeeServlet extends HttpServlet {
             out.println("<h1 style='text-align:center;margin:20px;letter-spacing:0.3em'>Employee Details</h1>");
             out.println("<hr>");
             
-            
+            response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
             
             out.println("<Center>");
             

@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" href="https://media-exp1.licdn.com/dms/image/C560BAQH00MCBWLYYyA/company-logo_200_200/0?e=2159024400&v=beta&t=AubBS-Kij0iEK5qgPl0pnH3N-ZzLVcz1TZX6TpzTZrs"  />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
@@ -26,6 +27,12 @@
         
         
         <hr>
+        <%
+         response.setHeader("Cache-Control","no-cache,no-strore,must-revalidate");
+        response.setHeader("Prahma", "no-chache");
+        response.setHeader("Expires","0");
+        
+        %>
         
          <div class="container" style="background-color: lightcyan;padding: 25px;border-radius: 20px">
             
@@ -57,7 +64,7 @@
                 </tr>
                             </div>
                 
-                <div class="form-group">
+<!--                <div class="form-group">
                 <tr>
                     <th>
                         <label >Select User Role :</abel ></th>
@@ -70,7 +77,7 @@
                             </select>
                     </td>
                 </tr>
-                            </div>
+                            </div>-->
                 
                 <tr>
                     <td colspan="2">

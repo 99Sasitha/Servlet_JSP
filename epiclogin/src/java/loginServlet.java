@@ -17,6 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,7 +33,7 @@ public class loginServlet extends HttpServlet {
         
         String username=request.getParameter("userName");
         String password=request.getParameter("password");
-        String userRole=request.getParameter("dropdown");
+      
         
         //database
         try {
@@ -43,33 +44,32 @@ public class loginServlet extends HttpServlet {
             //get data from student table
            
             Statement stm=con.createStatement();
-            ResultSet rs=stm.executeQuery("select * from students where username='"+username+"' and password=md5('"+password+"') and userRole='"+userRole+"'");
+            ResultSet rs=stm.executeQuery("select * from students where username='"+username+"' and password=md5('"+password+"') ");
            
              
             if(rs.next()){
                 //if username and password true then go to home page
-                if(userRole.equals("user")){
+              
+                
+                
+                if(rs.getString("userRole").equals("admin")){
+                      HttpSession session=request.getSession();
+                session.setAttribute("username",rs.getString("username"));
+                session.setAttribute("userRole",rs.getString("userRole"));
                     
-                    request.setAttribute("username",username);
-                RequestDispatcher rd=request.getRequestDispatcher("home.jsp");
-                rd.forward(request, response);
-                
-                
-                
-                
-                
-               
-                
-                
-                }
-                
-                else if(userRole.equals("admin")){
-                    
-                    request.setAttribute("username",username);
+                request.setAttribute("username",username);
                 RequestDispatcher rd=request.getRequestDispatcher("homeadmin.jsp");
                 rd.forward(request, response);
+                }
                 
+                else if(rs.getString("userRole").equals("user")){
+                      HttpSession session=request.getSession();
+                session.setAttribute("username",rs.getString("username"));
+                session.setAttribute("userRole",rs.getString("userRole"));
                 
+                request.setAttribute("username",username);
+                RequestDispatcher rd=request.getRequestDispatcher("home.jsp");
+                rd.forward(request, response);
                 }
             }
             else{
