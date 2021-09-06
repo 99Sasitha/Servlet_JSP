@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet(urlPatterns = {"/viewEmployeeServlet"})
@@ -35,9 +36,10 @@ public class viewEmployeeServlet extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            
             throws ServletException, IOException {
         
-        
+      
         
         response.setContentType("text/html");
         PrintWriter out=response.getWriter();
@@ -52,6 +54,19 @@ public class viewEmployeeServlet extends HttpServlet {
             
             Statement sts=con.createStatement();
             rs=sts.executeQuery(sql);
+           
+                 
+      HttpSession session=request.getSession();
+   response.setHeader("Cache-control","no-cache,no-store,must-revalidate");
+        response.setHeader("Pragma", "no-cache");
+        response.setDateHeader("Expires",0);
+      
+  if(session.getAttribute("username")==null&&session.getAttribute("userRole")==null){
+  
+  response.sendRedirect("lodin.jsp");
+  }
+  
+  
             
             out.println("<head>\n" +
 "        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n" +
@@ -65,11 +80,14 @@ public class viewEmployeeServlet extends HttpServlet {
             
             
             out.println("<body style=\"background-size: cover;background-repeat: no-repeat;background-image:url('https://news.fnal.gov/wp-content/uploads/2020/02/2020-02-11_5e42c8469d971_White_background-scaled.jpg') \">");
-            
-            response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
-        response.setHeader("Pragma", "no-cache");
-        response.setHeader("Expires","0");
-            
+    
+   //____________________________Session Management and Logout_______________________________________________
+          
+   
+  
+     
+   
+   //____________________________________________________________________________________________________________________________________
             out.println("<header>");
             out.println("<nav class=\"nav nav-pills nav-fill\" style=\"margin-top: 15px;color:white;padding:10px;background-color: beige\">\n" +
 

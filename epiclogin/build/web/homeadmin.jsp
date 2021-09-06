@@ -31,10 +31,9 @@
   
   <%
       
-      response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
+   response.setHeader("Cache-control","no-cache,no-store,must-revalidate");
         response.setHeader("Pragma", "no-cache");
-        response.setHeader("Expires","0");
-       
+        response.setDateHeader("Expires",0);
       
       
   if(session.getAttribute("username")==null&&session.getAttribute("userRole")==null){

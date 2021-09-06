@@ -19,6 +19,16 @@
         <title>Epic Technology</title>
     </head>
     <body style="background-size: cover;background-repeat: no-repeat;background-image:url('https://news.fnal.gov/wp-content/uploads/2020/02/2020-02-11_5e42c8469d971_White_background-scaled.jpg') ">
+       <%
+        response.setHeader("Cache-control","no-cache,no-store,must-revalidate");
+        response.setHeader("Pragma", "no-cache");
+        response.setDateHeader("Expires",0);
+        
+if(session.getAttribute("username")==null&&session.getAttribute("userRole")==null){
+  
+  response.sendRedirect("lodin.jsp");
+  }
+        %>
         <nav class="nav nav-pills nav-fill" style="margin-top: 15px;color:white; padding:10px;background-color: beige">
 
             <a class="nav-link " aria-current="page" href="lodin.jsp" style="border-right: gray;border-style: inset" onclick="addEmployeeConfirm()">Add Employee</a>
@@ -30,12 +40,7 @@
   <button style="color:white;background-color: red;font-weight: bold">__Log Out__</button>
  </form>
 </nav>
-        <%
         
-        response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
-        response.setHeader("Pragma", "no-cache");
-        response.setHeader("Expires","0");
-        %>
         
         <script>
             function addEmployeeConfirm(){
