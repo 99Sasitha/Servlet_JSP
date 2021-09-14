@@ -23,73 +23,45 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = {"/DeleteServelet"})
 public class DeleteServelet extends HttpServlet {
 
-  Connection con;
+    Connection con;
     PreparedStatement pst;
     ResultSet rs;
     int row;
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
     }
 
-   
-    
-
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
-        
+
         response.setContentType("text/html");
-        PrintWriter out=response.getWriter();
-        
-     
-         
+        PrintWriter out = response.getWriter();
+
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3308/epiclogindb","root","");
-            
-             
-          String id=request.getParameter("id");
-          
-      
-          
-          pst=con.prepareStatement("delete from employees where empid= ?");
-          
-         
-          
-          pst.setString(1, id);
-          
-          row=pst.executeUpdate();
-          
-          response.sendRedirect("viewEmployeeServlet");
-          
-          
-           
-            
-            
-            
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3308/epiclogindb", "root", "");
+
+            String id = request.getParameter("id");
+
+            pst = con.prepareStatement("delete from employees where empid= ?");
+
+            pst.setString(1, id);
+
+            row = pst.executeUpdate();
+
+            response.sendRedirect("viewEmployeeServlet");
+
         } catch (Exception e) {
-            
-             out.println("<font color='red'><h1>_____Delete Faild_____</h1></font>" + e);
+
+            out.println("<font color='red'><h1>_____Delete Faild_____</h1></font>" + e);
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
     }
 
-  
     @Override
     public String getServletInfo() {
         return "Short description";

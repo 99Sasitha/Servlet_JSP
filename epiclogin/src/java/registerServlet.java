@@ -25,65 +25,48 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = {"/registerServlet"})
 public class registerServlet extends HttpServlet {
 
-    
-
     Connection con;
     PreparedStatement pst;
     int row;
-   
-   
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         response.setContentType("text/html");
-        PrintWriter out= response.getWriter();
-        
-        
-        
+        PrintWriter out = response.getWriter();
+
         try {
             //open connection
             Class.forName("com.mysql.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3308/epiclogindb","root","");
-            Statement st=con.createStatement();
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3308/epiclogindb", "root", "");
+            Statement st = con.createStatement();
 
-            
             //get data from student table
-            String username=request.getParameter("userName");
-            String password=request.getParameter("password");
+            String username = request.getParameter("userName");
+            String password = request.getParameter("password");
 //            String userRole=request.getParameter("dropdown");
-            
-           
-            
-          
-            
-            pst=con.prepareStatement("insert into students values(null,?,md5(?),'user')");
-             
-            pst.setString(1,username);
+
+            pst = con.prepareStatement("insert into students values(null,?,md5(?),'user')");
+
+            pst.setString(1, username);
             pst.setString(2, password);
 //            pst.setString(3,userRole);
-            
-            row=pst.executeUpdate();
-            
+
+            row = pst.executeUpdate();
+
             out.println("<h1>Success Register </h1>  <a href='lodin.jsp'>"
-        + "<button style='margin:20px;padding:20px;background-color:green;border-radius:15px;color:white;font-weight:bold'>Log in</button> "
-        + "</a>");
-           
-            
-          
-          
-          
-            
+                    + "<button style='margin:20px;padding:20px;background-color:green;border-radius:15px;color:white;font-weight:bold'>Log in</button> "
+                    + "</a>");
+
         } catch (Exception e) {
-            
-            out.println("<h3 style='color:red'>Worning! :"+" "+"This Username is Already used! Registration with another Username<h3>"+e);
-             out.println(" <a href='registration.jsp'>"
-        + "<button style='margin:20px;padding:20px;background-color:green;border-radius:15px;color:white;font-weight:bold'>__Try Again__</button> "
-        + "</a>");
+
+            out.println("<h3 style='color:red'>Worning! :" + " " + "This Username is Already used! Registration with another Username<h3>" + e);
+            out.println(" <a href='registration.jsp'>"
+                    + "<button style='margin:20px;padding:20px;background-color:green;border-radius:15px;color:white;font-weight:bold'>__Try Again__</button> "
+                    + "</a>");
         }
-        
-        
-        
+
     }
 
     /**
@@ -91,6 +74,4 @@ public class registerServlet extends HttpServlet {
      *
      * @return a String containing servlet description
      */
-    
-
 }

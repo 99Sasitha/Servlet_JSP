@@ -26,68 +26,58 @@ import javax.servlet.http.HttpSession;
 @WebServlet(urlPatterns = {"/loginServlet"})
 public class loginServlet extends HttpServlet {
 
-   
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String username=request.getParameter("userName");
-        String password=request.getParameter("password");
-      
-        
+
+        String username = request.getParameter("userName");
+        String password = request.getParameter("password");
+
         //database
         try {
             //open connection
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3308/epiclogindb","root","");
-            
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3308/epiclogindb", "root", "");
+
             //get data from student table
-           
-            Statement stm=con.createStatement();
-            ResultSet rs=stm.executeQuery("select * from students where username='"+username+"' and password=md5('"+password+"') ");
-           
-             
-            if(rs.next()){
+            Statement stm = con.createStatement();
+            ResultSet rs = stm.executeQuery("select * from students where username='" + username + "' and password=md5('" + password + "') ");
+
+            if (rs.next()) {
                 //if username and password true then go to home page
-              
-                
-                
-                if(rs.getString("userRole").equals("admin")){
-                      HttpSession session=request.getSession();
-                session.setAttribute("username",rs.getString("username"));
-                session.setAttribute("userRole",rs.getString("userRole"));
-                    
-                request.setAttribute("username",username);
-                RequestDispatcher rd=request.getRequestDispatcher("homeadmin.jsp");
-                rd.forward(request, response);
+
+                if (rs.getString("userRole").equals("admin")) {
+                    HttpSession session = request.getSession();
+                    session.setAttribute("username", rs.getString("username"));
+                    session.setAttribute("userRole", rs.getString("userRole"));
+
+                    request.setAttribute("username", username);
+                    RequestDispatcher rd = request.getRequestDispatcher("homeadmin.jsp");
+                    rd.forward(request, response);
+                } else if (rs.getString("userRole").equals("user")) {
+                    HttpSession session = request.getSession();
+                    session.setAttribute("username", rs.getString("username"));
+                    session.setAttribute("userRole", rs.getString("userRole"));
+
+                    request.setAttribute("username", username);
+                    RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
+                    rd.forward(request, response);
                 }
-                
-                else if(rs.getString("userRole").equals("user")){
-                      HttpSession session=request.getSession();
-                session.setAttribute("username",rs.getString("username"));
-                session.setAttribute("userRole",rs.getString("userRole"));
-                
-                request.setAttribute("username",username);
-                RequestDispatcher rd=request.getRequestDispatcher("home.jsp");
-                rd.forward(request, response);
-                }
-            }
-            else{
-            //worng password
-            response.sendRedirect("lodin.jsp");
-     out.println("<h2>Incorrect Password or Username or Incorrect User Role<h2>");
+            } else {
+                //worng password
+                response.sendRedirect("lodin.jsp");
+                out.println("<h2>Incorrect Password or Username or Incorrect User Role<h2>");
 //           out.println("Worng Username And Password");
-            
+
             }
-            
+
             con.close();
-            
-            
+
         } catch (Exception e) {
-            
+
             System.out.println(e.getMessage());
         }
-        
+
     }
 
     /**
@@ -95,6 +85,4 @@ public class loginServlet extends HttpServlet {
      *
      * @return a String containing servlet description
      */
-    
-
 }
