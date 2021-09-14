@@ -4,6 +4,10 @@
     Author     : Sasitha Munasinghe
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -33,11 +37,45 @@
 
         %>
         <nav class="nav nav-pills nav-fill" style="margin-top: 15px;color:white;padding:10px;background-color: beige">
+            <a class="nav-link" href="lodin.jsp" style="border-right: gray;border-style: inset" onclick="addEmployeeConfirm()">Add Employee</a>
+            <!-----------------------------------------------------------Add Dynamic Pages----------------------------------------------->
+            <%                 try {
+                    Class.forName("com.mysql.jdbc.Driver");
 
-            <a class="nav-link " aria-current="page" href="lodin.jsp" style="border-right: gray;border-style: inset" onclick="addEmployeeConfirm()">Add Employee</a>
-            <a class="nav-link" href="ViewPage.jsp" style="border-right: gray;border-style: inset">View Employees</a>
-            <a class="nav-link" href="adminMain.jsp" style="border-right: gray;border-style: inset">Staff Details</a>
-            <a class="nav-link" href="MoreDetails.jsp" style="border-right: gray;border-style: inset">More Details</a>
+                } catch (Exception e) {
+
+                    out.println(e);
+                }
+
+            %>
+
+            <%        try {
+
+                    Connection con3 = DriverManager.getConnection("jdbc:mysql://localhost:3308/epiclogindb", "root", "");
+                    Statement stm3 = con3.createStatement();
+                    String sql3 = "SELECT * FROM adminpages";
+                    ResultSet rs3 = stm3.executeQuery(sql3);
+                    while (rs3.next()) {
+        //            String bookid=rs.getString("bookid");
+
+            %>
+
+
+            <a class="nav-link" href="<%=rs3.getString("pageurl")%>" style="border-right: gray;border-style: inset"><%=rs3.getString("pagename")%></a>
+
+
+
+
+            <%
+                    }
+                } catch (Exception e) {
+
+                    out.println(e);
+                }
+            %>
+
+
+            <!--_____________________________________________________________________________________________________________________________________-->  
             <form action="logoutServlet">
                 <button style="color:white;background-color: red;font-weight: bold">__Log Out__</button>
             </form>
@@ -66,6 +104,7 @@
 
 
     </script>
+
 
 </body>
 </html>
