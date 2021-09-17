@@ -30,55 +30,53 @@
     </head>
     <body>
         <h1>Company Achivement</h1>
-        
+
         <nav class="nav nav-pills nav-fill" style="margin-top: 15px;color:white;padding:10px;background-color:lightgrey">
-             <a class="nav-link" href="lodin.jsp" style="border-right: gray;border-style: inset" onclick="addEmployeeConfirm()">Add Employee</a>
-<!-----------------------------------------------------------Add Dynamic Pages----------------------------------------------->
-             <%
-    try {
-            Class.forName("com.mysql.jdbc.Driver");
-           
-            
-        } catch (Exception e) {
-            
-            out.println(e);
-        }
-    
-    %>
-    
-    <%
-       try {
-               
-            Connection con3=DriverManager.getConnection("jdbc:mysql://localhost:3308/epiclogindb","root","");
-        Statement stm3=con3.createStatement();
-        String sql3="SELECT * FROM userpages";
-        ResultSet rs3=stm3.executeQuery(sql3);
-        while(rs3.next()){
-//            String bookid=rs.getString("bookid");
-        
-        %>
-
-            
-        <a class="nav-link" href="<%=rs3.getString("pageurl")%>" style="border-right: gray;border-style: inset"><%=rs3.getString("pagename")%></a>
-            
-            
-            
-            
+            <a class="nav-link" href="lodin.jsp" style="border-right: gray;border-style: inset" onclick="addEmployeeConfirm()">Add Employee</a>
+            <!-----------------------------------------------------------Add Dynamic Pages----------------------------------------------->
             <%
-        }
-           } catch (Exception e) {
+                try {
+                    Class.forName("com.mysql.jdbc.Driver");
 
-           out.println(e);
-           }
-        %>
-            
-            
- <!--_____________________________________________________________________________________________________________________________________-->           
-            
+                } catch (Exception e) {
+
+                    out.println(e);
+                }
+
+            %>
+
+            <%        try {
+
+                    Connection con3 = DriverManager.getConnection("jdbc:mysql://localhost:3308/epiclogindb", "root", "");
+                    Statement stm3 = con3.createStatement();
+                    String sql3 = "SELECT * FROM userpages";
+                    ResultSet rs3 = stm3.executeQuery(sql3);
+                    while (rs3.next()) {
+        //            String bookid=rs.getString("bookid");
+
+            %>
+
+
+            <a class="nav-link" href="<%=rs3.getString("pageurl")%>" style="border-right: gray;border-style: inset"><%=rs3.getString("pagename")%></a>
+
+
+
+
+            <%
+                    }
+                } catch (Exception e) {
+
+                    out.println(e);
+                }
+            %>
+
+
+            <!--_____________________________________________________________________________________________________________________________________-->           
+
             <form action="logoutServlet">
                 <button style="color:white;background-color: red;font-weight: bold">__Log Out__</button>
             </form>
 
-         </nav>
+        </nav>
     </body>
 </html>

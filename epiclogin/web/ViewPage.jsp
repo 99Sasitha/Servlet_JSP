@@ -145,7 +145,7 @@
                     <td style='text-align:center'><%=rs.getString("loginUser")%></td>
                     <td style='text-align:center'><%=rs.getString("loginAdmin")%></td>
                     <td style='text-align:center'><a href='EditServlet?id=<%=rs.getString("empid")%>'><button style='background-color:green;margin:2px;padding:5px;color:white;border-radius:10px'>__Edit__</button></a></td>
-                    <td style='text-align:center'><a href='DeleteServelet?id=<%=rs.getString("empid")%>'><button style='background-color:red;margin:2px;padding:5px;color:white;border-radius:10px' >__Delete__</button></a></td>
+                    <td style='text-align:center'><a onclick="return confirm('Are You want to Delete?')" href='DeleteServelet?id=<%=rs.getString("empid")%>'><button style='background-color:red;margin:2px;padding:5px;color:white;border-radius:10px' >__Delete__</button></a></td>
 
                 </tr> 
 
