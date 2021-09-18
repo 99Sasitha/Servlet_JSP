@@ -96,7 +96,7 @@
         <!--        <form action="logoutServlet">
                     <button class="btn btn-danger" style="margin: 20px">Logout</button>
                 </form>-->
-        <div class="container" style="background-color: lightskyblue;padding: 25px;border-radius: 20px">
+        <div class="container" style="background-color:lightgrey;padding: 25px;border-radius: 20px">
             <!--            <a href="viewEmployeeServlet"><button class="btn btn-success" style="margin: 20px">View All Employees</button></a>-->
 
 

@@ -18,18 +18,15 @@
         <title>login</title>
 
     </head>
-    <heder style='color: white; text-align: center'>
-        <h3 style="letter-spacing: .5em;background-color: blue;margin: 15px;padding: 10px;border-radius: 25px">Epic Technology</h3>
-    </heder>
-
+    
 
 
 
     <body style="background-size: cover;background-repeat: no-repeat;background-image:url('https://news.fnal.gov/wp-content/uploads/2020/02/2020-02-11_5e42c8469d971_White_background-scaled.jpg') ">
-        <h1 style="text-align: center;margin: 20px;font-weight: bold;letter-spacing: 0.2em">Login Page</h1>
+        <h1 style="text-align: center;margin: 20px;font-weight:bolder;letter-spacing: 0.2em">Login Page</h1>
 
         <hr>
-
+<center> <img style="border-radius: 100px;" src="https://media-exp1.licdn.com/dms/image/C560BAQH00MCBWLYYyA/company-logo_200_200/0?e=2159024400&v=beta&t=AubBS-Kij0iEK5qgPl0pnH3N-ZzLVcz1TZX6TpzTZrs"  alt="..." class="img-thumbnail"></center>
         <div class="container" style="align-content: center">
 
 
@@ -37,11 +34,11 @@
 
 
 
-            <div class="container" style="background-color: lightskyblue;padding: 25px;margin-top: 50px;border-radius: 20px">
+            <div class="container" style="background-color:lightgrey;padding: 25px;margin-top: 50px;border-radius: 20px">
                 <form action="loginServlet" method="post" > 
 
 
-                    <div class="container" style="background-color: lightskyblue;margin: 20px">
+                    <div class="container" style="background-color: lightgrey;margin: 20px">
                         <center> <table width="500px" style="text-align: center;">
                                 <tr style="margin-bottom: 20px">
                                     <th><div class="form-group">

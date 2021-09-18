@@ -18,9 +18,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registration Page</title>
     </head>
-    <header>
-        <h2 style="text-align: center;background: blue; color: white;padding: 10px" >Student Registration</h2>
-    </header>
+   
 
     <body style="background-size: cover;background-repeat: no-repeat;background-image:url('https://news.fnal.gov/wp-content/uploads/2020/02/2020-02-11_5e42c8469d971_White_background-scaled.jpg') ">
         <h1 style="text-align: center;font-weight: bold;letter-spacing: 0.2em;margin: 20px">Registration Page</h1>
@@ -34,7 +32,7 @@
 
         %>
 
-        <div class="container" style="background-color: lightcyan;padding: 25px;border-radius: 20px">
+        <div class="container" style="background-color:lightgrey;padding: 25px;border-radius: 20px">
 
 
 
